@@ -47,9 +47,12 @@ userSchema.pre('save', function(next){
                 // hash => 암호화된 비밀번호
                 if(err) return next(err)
                 user.passowrd = hash
+                
                 next()
             })
         })
+    } else {
+        next()
     }
 })
 
