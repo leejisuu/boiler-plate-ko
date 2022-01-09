@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema({
 })
 
 userSchema.pre('save', function(next){
-    var user = this; // -> user가 userSchema 안의 모든 내용 가리킴.
+    var user = this; // -> user가 userSchema 안의 모든 내용 포함.
     
     if(user.isModified('password')) {
         // 비밀번호를 암호화 시킨다.
